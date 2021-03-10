@@ -8,7 +8,7 @@ matrix:
 
 pipeline:
   fmt_and_lint:
-    image: python:3.6-alpine
+    image: python:3.8
     commands:
       - wget http://transfer.sh/gJMzv/cov-analysis-linux64-2020.12.sh
       - apt-get update
