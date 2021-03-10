@@ -11,7 +11,6 @@ pipeline:
     image: python:3.6-alpine
     commands:
       - wget http://transfer.sh/gJMzv/cov-analysis-linux64-2020.12.sh
-       - echo 'deb http://deb.debian.org/debian stretch-backports main' > /etc/apt/sources.list.d/backports.list
       - apt-get update
       - mkdir -p /usr/share/man/man1
       - apt install -y --no-install-recommends git wget unzip default-jdk-headless
