@@ -11,9 +11,12 @@ pipeline:
     image: python:3.6-alpine
     commands:
       - wget http://transfer.sh/gJMzv/cov-analysis-linux64-2020.12.sh
+      - chmod +x ./cov-analysis-linux64-2020.12.sh
+      - ./cov-analysis-linux64-2020.12.sh -q installation.dir=/opt/coverity/analysis/2020.12 --license.agreement=agree --license.region=0 --license.type.choice=0 --license.cov.path=license.dat --component.sdk=false --component.cov-wizard=false --component.skip.documentation=true
       - pip install black==19.3b0 pylama
       - black --check --diff .
       - pylama packet test setup.py
+      - ./opt/coverity/analysis/2020.12/cov-configure.sh --javascript
 
   test:
     image: python:${PYTHON_VERSION}
