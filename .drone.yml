@@ -19,7 +19,7 @@ pipeline:
       - pip install black==19.3b0 pylama
       - black --check --diff .
       - pylama packet test setup.py
-      - ./opt/coverity/analysis/2020.12/cov-configure.sh --javascript
+      - ./opt/coverity/analysis/2020.12/bin/cov-configure.sh --javascript
   test:
     image: python:${PYTHON_VERSION}
     commands:
