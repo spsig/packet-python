@@ -15,7 +15,7 @@ pipeline:
       - mkdir -p /usr/share/man/man1
       - apt install -y --no-install-recommends git wget unzip default-jdk-headless
       - chmod +x ./cov-analysis-linux64-2020.12.sh
-      - export PATH=$PATH:/opt/coverity/analysis/2020.12/bin"
+      - export PATH=$PATH:/opt/coverity/analysis/2020.12/bin
       - ./cov-analysis-linux64-2020.12.sh -q --installation.dir=/opt/coverity/analysis/2020.12 --license.agreement=agree --license.region=0 --license.type.choice=0 --license.cov.path=/drone/src/github.com/spsig/packet-python/license.dat --component.sdk=false --component.cov-wizard=false --component.skip.documentation=true
       - cov-configure --python
       - cov-capture --dir idir --project-dir .
